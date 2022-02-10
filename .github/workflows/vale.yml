@@ -20,16 +20,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Check out repository code
+        uses: actions/checkout@v2
 
       - name: Vale
-      uses: errata-ai/vale-action@v1.4.2
-      with:
-        debug: true
-        styles: |
-          https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
-          https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
+        uses: errata-ai/vale-action@v1.4.2
+        with:
+          debug: true
+          styles: |
+            https://github.com/errata-ai/write-good/releases/latest/download/write-good.zip
+            https://github.com/errata-ai/Microsoft/releases/latest/download/Microsoft.zip
 
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
