@@ -20,9 +20,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Checkout
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
       - name: Vale
       uses: errata-ai/vale-action@v1.4.2
